@@ -1,6 +1,255 @@
-/******* Change Box Model ***************/
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
+/* root */
+:root{
+    --bg-checker: url('/images/site/checkerboard.jpg');
+    --primary:#00aab4;
+    --brand:#0b66a8;
+    --muted:#f3f6f7;
+    --text:#222;
+    --panel-bg:#ffffff;
+    --shadow:rgba(0,0,0,0.12);
+    --radius:14px;
+}
+
+/* reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* body */
+body{
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+    background:var(--bg-checker) repeat;
+    background-size:64px 64px;
+    color:var(--text);
+    line-height:1.6;
+    padding:2rem;
+}
+
+/* wrapper */
+#wrapper{
+    max-width:1100px;
+    margin:0 auto;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    background:var(--panel-bg);
+    border-radius:var(--radius);
+    box-shadow:0 10px 30px var(--shadow);
+    position:relative;
+}
+
+/* header */
+#top-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:1rem 2rem;
+    background:var(--muted);
+}
+
+.siteName a{
+    font-size:1.8rem;
+    font-weight:700;
+    color:var(--text);
+    text-decoration:none;
+}
+
+#tools a{
+    color:var(--brand);
+    font-weight:600;
+    text-decoration:none;
+}
+
+/* navigation */
+#main-navigation{
+    background:#222;
+    padding:.5rem 1rem;
+}
+
+#main-navigation ul{
+    display:flex;
+    justify-content:center;
+    gap:1.25rem;
+    list-style:none;
+}
+
+#main-navigation a{
+    color:#fff;
+    text-decoration:none;
+    padding:.45rem .8rem;
+    border-radius:6px;
+    font-weight:600;
+}
+
+#main-navigation a:hover{
+    background:#444;
+}
+
+/* main */
+main{
+    flex:1;
+    padding:2rem;
+}
+
+/* hero */
+.hero-section h1{
+    font-size:2.5rem;
+    margin-bottom:1rem;
+}
+
+/* car feature */
+.car-feature{
+    display:flex;
+    gap:1.25rem;
+    padding:1.25rem;
+    margin:2rem 0;
+    background:#f9f9fb;
+    border-radius:10px;
+}
+
+.car-info h2{
+    color:var(--brand);
+    margin-bottom:.5rem;
+}
+
+.car-info ul{
+    list-style:none;
+    color:var(--primary);
+    font-weight:600;
+}
+
+.own-today-btn{
+    background:var(--primary);
+    color:#fff;
+    border:none;
+    padding:.6rem 1rem;
+    border-radius:6px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+/* car image */
+.car-image img{
+    max-width:100%;
+    border-radius:8px;
+    box-shadow:0 8px 22px rgba(0,0,0,.12);
+}
+
+/* upgrades */
+.upgrades-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+    gap:1rem;
+}
+
+.upgrade-item{
+    background:#fff;
+    padding:1rem;
+    border-radius:8px;
+    text-align:center;
+}
+
+.upgrade-item p{
+    color:var(--brand);
+    font-weight:700;
+}
+
+/* reviews */
+.reviews-list{
+    list-style:none;
+}
+
+.reviews-list li{
+    margin-bottom:1rem;
+}
+
+/* footer */
+footer{
+    background:var(--muted);
+    text-align:center;
+    padding:1rem;
+}
+
+/* tablet */
+@media(max-width:768px){
+    main{padding:1rem;}
+    .car-feature{flex-direction:column;}
+}
+
+/* mobile */
+@media(max-width:480px){
+
+    body{
+        background:none;
+        padding: auto;
+    }
+
+    #wrapper{
+      width:100%;
+      max-width:none;
+      min-height:100vh;
+      margin:0;
+      padding:0;
+      border-radius:0;
+      box-shadow:none;
+    }
+
+    #top-header{
+        padding:.75rem 1rem;
+        overflow-x:auto;
+    }
+
+    .siteName a{
+        font-size:1.4rem;
+    }
+
+    #tools a{
+        font-size:.9rem;
+    }
+
+    #main-navigation{
+        padding:.25rem 0;
+        overflow-x: auto;
+    }
+
+    main{
+        padding:1rem;
+    }
+
+    .hero-section h1{
+        font-size:1.9rem;
+        line-height:1.2;
+    }
+
+    .car-feature{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:.75rem;
+        padding:1rem;
+    }
+
+    .own-today-btn{
+        width:100%;
+        text-align:center;
+        padding:.7rem;
+        font-size:1rem;
+    }
+
+    .car-image{
+        width:100%;
+        display:flex;
+        justify-content:center;
+        margin-top:.5rem;
+    }
+
+    .car-image img{
+        max-width:260px;
+    }
+
+    .upgrades-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:.75rem;
+    }
 }
